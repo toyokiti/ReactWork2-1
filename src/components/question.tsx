@@ -1,26 +1,26 @@
 interface questionprops {
     question : string;
+    name: string;
     state : boolean;
-    setState : object;
+    setState : Function;
     isRadioButton: Function;
 }
 
 const Question = (props: questionprops) => {
-    console.log(props)
     return (
         <>
-            <div className="main2_question1 main2_questions">
+            <div className="main2_questions">
                 <p>{props.question}</p>
                 <input 
                     type="radio"
-                    name="isQestion1"
+                    name={props.name}
                     value="yes"
                     onChange={event => props.isRadioButton(event.target.name, event.target.value)}
                 />
                 <label>はい</label> 
                 <input
                     type="radio"
-                    name="isQestion1"
+                    name={props.name}
                     value="no"
                     onChange={event => props.isRadioButton(event.target.name, event.target.value)}
                 />
