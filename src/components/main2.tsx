@@ -1,10 +1,11 @@
 import React, { useState }  from "react";
 import { MAIN2_QUESTIONS } from "../utils";
+import { Link } from "react-router-dom";
+import {Question} from './index'
 
 const Main2: React.FC = () => {
     const [isQuestion1, setQuestion1] = useState(true);
     const [isQuestion2, setQuestion2] = useState(true);
-    const [isQuestion3, setQuestion3] = useState(true);
 
     const isRadioButton = (name: string, value: string) => {
         console.log(name);
@@ -21,13 +22,6 @@ const Main2: React.FC = () => {
                     setQuestion2(true);
                 } else {
                     setQuestion2(false);
-                }
-                break;
-            case 'isQestion3': 
-                if(value === 'yes') {
-                    setQuestion3(true);
-                } else {
-                    setQuestion3(false);
                 }
                 break;
             default:
@@ -92,31 +86,22 @@ const Main2: React.FC = () => {
 
             <div className="App-main_sex">
                 <form>
-                    <div className="main2_question1 main2_questions">
-                        <p>{MAIN2_QUESTIONS.question1}</p>
-                        <input 
-                            type="radio"
-                            name="isQestion1"
-                            value="yes"
-                            onChange={event => isRadioButton(event.target.name, event.target.value)}
-                            />
-                        <label>はい</label> 
-                        <input
-                            type="radio"
-                            name="isQestion1"
-                            value="no"
-                            onChange={event => isRadioButton(event.target.name, event.target.value)}
-                        />
-                        <label>いいえ</label>
-                    </div>
+
+                    <Question
+                        question = {MAIN2_QUESTIONS.question1}
+                        state = {isQuestion1}
+                        setState = {setQuestion1}
+                        isRadioButton = {isRadioButton} 
+                    />
                     
                     {question2}
                     {question3}
-                    
+
                 </form>
             </div>
         </main>
-        {/* <button className="nextbutton"><Link to={`/step2/`}>次へ進む</Link></button>    */}
+        <button className="button beforebutton"><Link to={`/`}>前へ戻る</Link></button> 
+        <button className="button nextbutton"><Link to={`/step3/`}>次へ進む</Link></button>  
         
         
         </>
