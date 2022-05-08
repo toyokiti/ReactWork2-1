@@ -1,13 +1,16 @@
 import React from 'react';
 import './App.css';
-import {Header, Main} from './components/index';
+import { Step1, Step2 } from './components/index';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <Header />
-      <Main />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path={`/`} element={<Step1 />} />
+        <Route path={`/step2`} element={<Step2 />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

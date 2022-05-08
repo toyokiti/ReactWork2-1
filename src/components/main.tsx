@@ -1,5 +1,6 @@
 import React from 'react';
 import { YEAR_LISTS, MONTH_LISTS, DAY_LISTS } from '../utils/index'
+import { Link } from "react-router-dom";
 
 const Main: React.FC = () => {
     return ( 
@@ -40,7 +41,7 @@ const Main: React.FC = () => {
                 </form>
             </div>
         </main>
-        <button className="nextbutton">次へ進む</button>   
+        <button className="nextbutton"><Link to={`/step2/`}>次へ進む</Link></button>   
         </>
     )
 }
