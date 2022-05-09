@@ -60,20 +60,26 @@
 
 }
 
-.App-main_sex {
+.App-main_content {
   margin-top: 30px;
   margin-bottom: 50px;
 }
 
-.App-main_sex_title {
-  color: skyblue;
-}
-
 .main2_questions {
   margin-bottom: 12px;
-  color: #0703fc;
 }
 
 .nextbutton {
   margin-left: 10px;
+}
+
+.textarea {
+  
+  box-sizing: border-box;
+  background-color: #fff;
+  width: 440px;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #bac6d3;
+  border-radius: 3px;
 }

@@ -11,7 +11,7 @@ const Main: React.FC = () => {
                 <p className="App-main_title_text">お客様の名前を入れてください</p>
             </div>
 
-            <div className="App-main_sex">
+            <div className="App-main_content">
                 <form>
                     <p>-性別-</p>
                     <input type="radio" name="sextype" value="male"/>
